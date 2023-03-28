@@ -1,4 +1,5 @@
 import request from 'superagent'
+import * as Models from '../../common/models'
 
 export interface Book {
   id: number
@@ -8,7 +9,7 @@ export interface Book {
   cover: string
 }
 
-export function getBooks(): Promise<Book[]> {
+export function getBooks(): Promise<Models.Book[]> {
   return request
     .get(`http://localhost:3000/api/v1`)
     .then((response) => response.body)

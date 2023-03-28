@@ -12,7 +12,7 @@ exports.seed = async function (knex) {
       year_published: 1953,
       read_status: true,
       cover:
-        'https://en.wikipedia.org/wiki/The_Sneetches_and_Other_Stories#/media/File:The_Sneetches_and_Other_Stories.png',
+        'https://upload.wikimedia.org/wikipedia/en/4/4d/The_Sneetches_and_Other_Stories.png',
     },
     {
       id: 2,
@@ -28,14 +28,15 @@ exports.seed = async function (knex) {
       year_published: 1982,
       read_status: false,
       cover:
-        'https://en.wikipedia.org/wiki/Hunches_in_Bunches#/media/File:Hunches_in_Bunches_cover.jpg',
+        'https://upload.wikimedia.org/wikipedia/en/0/0b/Hunches_in_Bunches_cover.jpg',
     },
     {
       id: 4,
       title: 'How the Grinch Stole Christmas!',
       year_published: 1957,
       read_status: true,
-      cover: 'https://en.wikipedia.org/wiki/How_the_Grinch_Stole_Christmas!',
+      cover:
+        'https://upload.wikimedia.org/wikipedia/en/8/87/How_the_Grinch_Stole_Christmas_cover.png',
     },
     {
       id: 5,
@@ -43,7 +44,7 @@ exports.seed = async function (knex) {
       year_published: 1948,
       read_status: true,
       cover:
-        'https://en.wikipedia.org/wiki/Thidwick_the_Big-Hearted_Moose#/media/File:Thidwick_the_Big-Hearted_Moose_(Dr_Seuss_book_-_cover_art).jpg',
+        'https://upload.wikimedia.org/wikipedia/en/b/b9/Thidwick_the_Big-Hearted_Moose_%28Dr_Seuss_book_-_cover_art%29.jpg',
     },
   ])
 }
