@@ -1,4 +1,9 @@
+import { getBooks } from '../apis/apiClient'
+import { useState } from 'react'
+
 function App() {
+  const [books, displayBooks] = useState('')
+
   return (
     <>
       <header className="header">
