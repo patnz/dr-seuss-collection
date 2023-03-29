@@ -9,3 +9,10 @@ const connection = knex(config[environment])
 export function getBooks(db = connection): Promise<Models.Book[]> {
   return db('dr_seuss_books').select()
 }
+
+export function addBook(
+  bookData: Models.Book,
+  db = connection
+): Promise<Models.Book> {
+  return db('dr_seuss_books').insert(bookData)
+}

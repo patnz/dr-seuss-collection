@@ -1,7 +1,7 @@
 import * as Models from '../../common/models'
 import { useAppDispatch, useAppSelector } from '../hooks/redux'
 import Book from './Book'
-import { requestSeussBooks, fetchSeussBooks } from '../actions/books'
+import { fetchSeussBooks } from '../actions/books'
 
 function BookList() {
   const bookList = useAppSelector((state) => state.books)
