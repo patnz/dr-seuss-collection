@@ -9,7 +9,7 @@ export interface Book {
   cover: string
 }
 
-export function getBooks(): Promise<Models.Book[]> {
+export function apiGetBooks(): Promise<Models.Book[]> {
   return request
     .get(`http://localhost:3000/api/v1`)
     .then((response) => response.body)
