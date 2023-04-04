@@ -1,5 +1,5 @@
 import express from 'express'
-import { getBooks, addBook, deleteBook } from '../db/dbUtils'
+import { getBooks, addBook, deleteBook, editBook } from '../db/dbUtils'
 import * as Models from '../../common/models'
 
 const router = express.Router()
@@ -28,6 +28,16 @@ router.delete('/delete/:id/', (req, res) => {
   deleteBook(+req.params.id)
     .then((deletedBookId) => {
       res.json(deletedBookId)
+    })
+    .catch((err) => {
+      console.log(err)
+    })
+})
+
+router.patch('/edit/', (req, res) => {
+  editBook(req.body)
+    .then((numberofEditedBooks) => {
+      res.json(numberofEditedBooks)
     })
     .catch((err) => {
       console.log(err)

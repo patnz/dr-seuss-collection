@@ -15,6 +15,8 @@ function seussBooksReducer(
     case 'DEL_BOOK': {
       return state.filter((book) => book.id !== payload)
     }
+    case 'EDIT_BOOK':
+      return state
     default:
       return state
   }

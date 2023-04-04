@@ -19,3 +19,10 @@ export function apiDeleteBook(id: number): Promise<number> {
     .delete(`http://localhost:3000/api/v1/delete/${id}`)
     .then((deletedBookId) => deletedBookId.body)
 }
+
+export function apiEditBook(book: Models.Book): Promise<Models.Book[]> {
+  return request
+    .patch(`http://localhost:3000/api/v1/edit/`)
+    .send(book)
+    .then((res) => res.body)
+}
