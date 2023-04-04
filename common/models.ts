@@ -5,3 +5,7 @@ export interface Book {
   read_status: boolean
   cover: string
 }
+
+export interface UserRating {
+  rating: number
+}

@@ -15,7 +15,7 @@ export const ADD_BOOK = 'ADD_BOOK'
 export const DEL_BOOK = 'DEL_BOOK'
 export const EDIT_BOOK = 'EDIT_BOOK'
 
-export type Action =
+export type BookAction =
   | { type: typeof REQUEST_BOOKS; payload: null }
   | { type: typeof RECEIVE_BOOKS; payload: Models.Book[] }
   | { type: typeof SHOW_ERROR; payload: string }
@@ -23,36 +23,36 @@ export type Action =
   | { type: typeof DEL_BOOK; payload: number }
   | { type: typeof EDIT_BOOK; payload: Models.Book }
 
-export function requestSeussBooks(): Action {
+export function requestSeussBooks(): BookAction {
   return {
     type: REQUEST_BOOKS,
     payload: null,
   }
 }
 
-export function receiveBooks(bookList: Models.Book[]): Action {
+export function receiveBooks(bookList: Models.Book[]): BookAction {
   return {
     type: RECEIVE_BOOKS,
     payload: bookList,
   }
 }
 
-export function showError(): Action {
+export function showError(): BookAction {
   return {
     type: REQUEST_BOOKS,
     payload: null,
   }
 }
 
-export function addBook(book: Models.Book): Action {
+export function addBook(book: Models.Book): BookAction {
   return { type: ADD_BOOK, payload: book }
 }
 
-export function deleteBook(id: number): Action {
+export function deleteBook(id: number): BookAction {
   return { type: DEL_BOOK, payload: id }
 }
 
-export function editBook(book: Models.Book): Action {
+export function editBook(book: Models.Book): BookAction {
   return { type: EDIT_BOOK, payload: book }
 }
 

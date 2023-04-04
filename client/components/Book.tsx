@@ -38,50 +38,57 @@ function Book({ singleBook }: Props) {
   return (
     <div>
       {isEditing ? (
-        <form onSubmit={handleEditSubmit}>
-          <label htmlFor="title">Title: </label>
-          <input
-            defaultValue={singleBook.title}
-            name="title"
-            id="title"
-            onChange={inputHandler}
-            required
-          />
-          <label htmlFor="year_published">Year Published: </label>
-          <input
-            defaultValue={singleBook.year_published}
-            name="year_published"
-            id="year_published"
-            onChange={inputHandler}
-            required
-          />
-          <label htmlFor="cover">Cover Image URL: </label>
-          <input
-            defaultValue={singleBook.cover}
-            name="cover"
-            id="cover"
-            onChange={inputHandler}
-            required
-          />
-          <label htmlFor="read_status">Have you read it? </label>
-          <select
-            name="read_status"
-            id="read_status"
-            onChange={selectHandler}
-            required
-          >
-            <option value="true">Yes</option>
-            <option value="false">No</option>
-          </select>
-          <br></br>
-          <br></br>
-          <button className="mini-generate-button" type="submit">
-            CONFIRM CHANGES
-          </button>
-          <button className="mini-generate-button" onClick={changeEditState}>
-            CANCEL
-          </button>
-        </form>
+        <>
+          <img alt={singleBook.title} src={singleBook.cover}></img>
+          <form onSubmit={handleEditSubmit}>
+            <label htmlFor="title">Title: </label>
+            <input
+              defaultValue={singleBook.title}
+              name="title"
+              id="title"
+              onChange={inputHandler}
+              required
+            />
+            <br></br>
+            <label htmlFor="year_published">Year Published: </label>
+            <input
+              defaultValue={singleBook.year_published}
+              name="year_published"
+              id="year_published"
+              onChange={inputHandler}
+              required
+            />
+            <br></br>
+            <label htmlFor="cover">Cover Image URL: </label>
+            <input
+              defaultValue={singleBook.cover}
+              name="cover"
+              id="cover"
+              onChange={inputHandler}
+              required
+            />
+            <br></br>
+            <label htmlFor="read_status">Have you read it? </label>
+            <select
+              name="read_status"
+              id="read_status"
+              onChange={selectHandler}
+              required
+            >
+              <br></br>
+              <option value="true">Yes</option>
+              <option value="false">No</option>
+            </select>
+            <br></br>
+            <br></br>
+            <button className="mini-generate-button" type="submit">
+              CONFIRM CHANGES
+            </button>
+            <button className="mini-generate-button" onClick={changeEditState}>
+              CANCEL
+            </button>
+          </form>
+        </>
       ) : (
         <>
           <img alt={singleBook.title} src={singleBook.cover}></img>

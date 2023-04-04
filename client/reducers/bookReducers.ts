@@ -1,11 +1,11 @@
-import { Action } from '../actions/books'
+import { BookAction } from '../actions/books'
 import * as Models from '../../common/models'
 
 const initialState = [] as Models.Book[]
 
 function seussBooksReducer(
   state = initialState,
-  { type, payload }: Action
+  { type, payload }: BookAction
 ): Models.Book[] {
   switch (type) {
     case 'RECEIVE_BOOKS':
