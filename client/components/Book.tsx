@@ -41,41 +41,46 @@ function Book({ singleBook }: Props) {
         <>
           <img alt={singleBook.title} src={singleBook.cover}></img>
           <form onSubmit={handleEditSubmit}>
-            <label htmlFor="title">Title: </label>
+            <label htmlFor={'edit-title-' + singleBook.id}>Title: </label>
             <input
               defaultValue={singleBook.title}
-              name="title"
-              id="title"
+              name="edit-title"
+              id={'edit-title-' + singleBook.id}
               onChange={inputHandler}
               required
             />
             <br></br>
-            <label htmlFor="year_published">Year Published: </label>
+            <label htmlFor={'edit-year_published-' + singleBook.id}>
+              Year Published:{' '}
+            </label>
             <input
               defaultValue={singleBook.year_published}
-              name="year_published"
-              id="year_published"
+              name="edit-year_published"
+              id={'edit-year_published-' + singleBook.id}
               onChange={inputHandler}
               required
             />
             <br></br>
-            <label htmlFor="cover">Cover Image URL: </label>
+            <label htmlFor={'edit-cover-' + singleBook.id}>
+              Cover Image URL:{' '}
+            </label>
             <input
               defaultValue={singleBook.cover}
-              name="cover"
-              id="cover"
+              name="edit-cover"
+              id={'edit-cover-' + singleBook.id}
               onChange={inputHandler}
               required
             />
             <br></br>
-            <label htmlFor="read_status">Have you read it? </label>
+            <label htmlFor={'edit-read_status-' + singleBook.id}>
+              Have you read it?{' '}
+            </label>
             <select
-              name="read_status"
-              id="read_status"
+              name="edit-read_status"
+              id={'edit-read_status-' + singleBook.id}
               onChange={selectHandler}
               required
             >
-              <br></br>
               <option value="true">Yes</option>
               <option value="false">No</option>
             </select>
@@ -92,9 +97,9 @@ function Book({ singleBook }: Props) {
       ) : (
         <>
           <img alt={singleBook.title} src={singleBook.cover}></img>
-          <h3>{singleBook.title}</h3>
-          <h4>Published: {singleBook.year_published}</h4>
-          <h4>Have you read it? {singleBook.read_status ? 'Yes' : 'No'}</h4>
+          <h1>{singleBook.title}</h1>
+          <h2>Published: {singleBook.year_published}</h2>
+          <h3>Have you read it? {singleBook.read_status ? 'Yes' : 'No'}</h3>
           <button onClick={deleteFunction}>DELETE</button>
           <button onClick={changeEditState}>EDIT</button>
         </>

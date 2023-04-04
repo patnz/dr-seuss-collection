@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <header className="header">
-        <h1>My Collection</h1>
+        <h1>Dr Seuss Collection</h1>
       </header>
       <BookList />
       <BookForm />
