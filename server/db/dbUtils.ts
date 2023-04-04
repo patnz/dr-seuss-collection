@@ -16,3 +16,6 @@ export function addBook(
 ): Promise<Models.Book> {
   return db('dr_seuss_books').insert(bookData)
 }
+export function deleteBook(id: number, db = connection): Promise<number> {
+  return db('dr_seuss_books').del().where('id', id)
+}

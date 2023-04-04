@@ -1,18 +1,20 @@
 import type { ThunkAction } from '../store'
 import * as Models from '../../common/models'
 
-import { apiGetBooks, apiAddBook } from '../apis/apiClient'
+import { apiGetBooks, apiAddBook, apiDeleteBook } from '../apis/apiClient'
 
 export const REQUEST_BOOKS = 'REQUEST_BOOKS'
 export const RECEIVE_BOOKS = 'RECEIVE_BOOKS'
 export const SHOW_ERROR = 'SHOW_ERROR'
 export const ADD_BOOK = 'ADD_BOOK'
+export const DEL_BOOK = 'DEL_BOOK'
 
 export type Action =
   | { type: typeof REQUEST_BOOKS; payload: null }
   | { type: typeof RECEIVE_BOOKS; payload: Models.Book[] }
   | { type: typeof SHOW_ERROR; payload: string }
   | { type: typeof ADD_BOOK; payload: Models.Book }
+  | { type: typeof DEL_BOOK; payload: number }
 
 export function requestSeussBooks(): Action {
   return {
@@ -35,6 +37,14 @@ export function showError(): Action {
   }
 }
 
+export function addBook(book: Models.Book): Action {
+  return { type: ADD_BOOK, payload: book }
+}
+
+export function deleteBook(id: number): Action {
+  return { type: DEL_BOOK, payload: id }
+}
+
 export function fetchSeussBooks(): ThunkAction {
   return async (dispatch) => {
     apiGetBooks()
@@ -53,7 +63,19 @@ export function addSeussBook(book: Models.Book): ThunkAction {
     apiAddBook(book)
       .then((bookArray: Models.Book[]) => {
         console.log(bookArray)
-        dispatch(receiveBooks(bookArray))
+        dispatch(addBook(book))
+      })
+      .catch((err) => {
+        console.log(err.message)
+      })
+  }
+}
+
+export function delSeussBook(id: number): ThunkAction {
+  return async (dispatch) => {
+    apiDeleteBook(id)
+      .then((id) => {
+        dispatch(deleteBook(id))
       })
       .catch((err) => {
         console.log(err.message)

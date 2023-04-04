@@ -13,3 +13,9 @@ export function apiAddBook(book: Models.Book): Promise<Models.Book[]> {
     .send(book)
     .then((response) => response.body)
 }
+
+export function apiDeleteBook(id: number): Promise<number> {
+  return request
+    .delete(`http://localhost:3000/api/v1/delete/${id}`)
+    .then((deletedBookId) => deletedBookId.body)
+}

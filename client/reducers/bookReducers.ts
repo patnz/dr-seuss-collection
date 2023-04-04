@@ -5,13 +5,13 @@ const initialState = [] as Models.Book[]
 
 function seussBooksReducer(
   state = initialState,
-  action: Action
+  { type, payload }: Action
 ): Models.Book[] {
-  const { type, payload } = action
-
   switch (type) {
-    case RECEIVE_BOOKS:
+    case 'RECEIVE_BOOKS':
       return payload
+    case 'ADD_BOOK':
+      return [...state, payload]
     default:
       return state
   }
