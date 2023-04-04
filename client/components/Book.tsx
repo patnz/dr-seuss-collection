@@ -8,6 +8,7 @@ interface Props {
 function Book({ singleBook }: Props) {
   const dispatch = useAppDispatch()
   const deleteFunction = () => dispatch(delSeussBook(singleBook.id))
+  // const testing = () => console.log(singleBook)
 
   return (
     <div>
@@ -15,7 +16,7 @@ function Book({ singleBook }: Props) {
       <h3>{singleBook.title}</h3>
       <h4>Published: {singleBook.year_published}</h4>
       <h4>Have you read it? {singleBook.read_status ? 'Yes' : 'No'}</h4>
-      <button onClick={deleteFunction}></button>
+      <button onClick={deleteFunction}>DELETE</button>
     </div>
   )
 }

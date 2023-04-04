@@ -1,4 +1,4 @@
-import { Action, RECEIVE_BOOKS } from '../actions/books'
+import { Action } from '../actions/books'
 import * as Models from '../../common/models'
 
 const initialState = [] as Models.Book[]
@@ -12,6 +12,9 @@ function seussBooksReducer(
       return payload
     case 'ADD_BOOK':
       return [...state, payload]
+    case 'DEL_BOOK': {
+      return state.filter((book) => book.id !== payload)
+    }
     default:
       return state
   }

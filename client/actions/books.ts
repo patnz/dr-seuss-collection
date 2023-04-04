@@ -74,7 +74,8 @@ export function addSeussBook(book: Models.Book): ThunkAction {
 export function delSeussBook(id: number): ThunkAction {
   return async (dispatch) => {
     apiDeleteBook(id)
-      .then((id) => {
+      .then(() => {
+        console.log(id)
         dispatch(deleteBook(id))
       })
       .catch((err) => {
