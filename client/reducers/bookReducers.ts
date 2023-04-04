@@ -16,7 +16,12 @@ function seussBooksReducer(
       return state.filter((book) => book.id !== payload)
     }
     case 'EDIT_BOOK':
-      return state
+      return state.map((book) => {
+        if (book.id === payload.id) {
+          return { ...book, ...payload }
+        }
+        return book
+      })
     default:
       return state
   }
