@@ -16,21 +16,27 @@ function Book({ singleBook }: Props) {
     isEditing ? setEditing(false) : setEditing(true)
   }
   //
-  const [formState, setFormState] = useState(singleBook)
+  const [editFormState, setEditFormState] = useState(singleBook)
   const inputHandler = (event: ChangeEvent<HTMLInputElement>) => {
-    setFormState({ ...formState, [event.target.name]: event.target.value })
-    console.log(formState)
+    setEditFormState({
+      ...editFormState,
+      [event.target.name]: event.target.value,
+    })
+    console.log(editFormState)
   }
 
   const selectHandler = (event: ChangeEvent<HTMLSelectElement>) => {
-    setFormState({ ...formState, [event.target.name]: event.target.value })
-    console.log(formState)
+    setEditFormState({
+      ...editFormState,
+      [event.target.name]: event.target.value,
+    })
+    console.log(editFormState)
   }
 
   const handleEditSubmit = (evt: FormEvent) => {
     evt.preventDefault()
-    console.log(formState)
-    dispatch(editSeussBook(formState))
+    console.log(editFormState)
+    dispatch(editSeussBook(editFormState))
     changeEditState()
   }
   //
@@ -44,7 +50,7 @@ function Book({ singleBook }: Props) {
             <label htmlFor={'edit-title-' + singleBook.id}>Title: </label>
             <input
               defaultValue={singleBook.title}
-              name="edit-title"
+              name="title"
               id={'edit-title-' + singleBook.id}
               onChange={inputHandler}
               required
@@ -55,7 +61,7 @@ function Book({ singleBook }: Props) {
             </label>
             <input
               defaultValue={singleBook.year_published}
-              name="edit-year_published"
+              name="year_published"
               id={'edit-year_published-' + singleBook.id}
               onChange={inputHandler}
               required
@@ -66,7 +72,7 @@ function Book({ singleBook }: Props) {
             </label>
             <input
               defaultValue={singleBook.cover}
-              name="edit-cover"
+              name="cover"
               id={'edit-cover-' + singleBook.id}
               onChange={inputHandler}
               required
@@ -76,7 +82,7 @@ function Book({ singleBook }: Props) {
               Have you read it?{' '}
             </label>
             <select
-              name="edit-read_status"
+              name="read_status"
               id={'edit-read_status-' + singleBook.id}
               onChange={selectHandler}
               required
