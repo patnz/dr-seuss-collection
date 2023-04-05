@@ -20,6 +20,9 @@ export function deleteBook(id: number, db = connection): Promise<number> {
   return db('dr_seuss_books').del().where('id', id)
 }
 
-export function editBook(book: Models.Book, db = connection): Promise<number> {
-  return db('dr_seuss_books').update(book).where('id', book.id)
+export function editBook(
+  editedBook: Models.Book,
+  db = connection
+): Promise<number> {
+  return db('dr_seuss_books').update(editedBook).where('id', editedBook.id)
 }

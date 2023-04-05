@@ -84,9 +84,9 @@ export function addSeussBook(book: Models.Book): ThunkAction {
 
 export function editSeussBook(book: Models.Book): ThunkAction {
   return async (dispatch) => {
+    console.log(book)
     apiEditBook(book)
       .then(() => {
-        console.log(book)
         dispatch(editBook(book))
       })
       .catch((err) => {
