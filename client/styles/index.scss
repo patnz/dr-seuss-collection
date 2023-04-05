@@ -7,5 +7,54 @@ body {
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+html, body {
+  margin: 0 auto;
+  width: 100%;
+  font-size: .9em;
+}
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 20px;
+  text-align: center;
+  letter-spacing: 3px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
 
+}
+.book-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin: 10px auto;
+  width: fit-content;
+  min-width: 60vw;
+  border: 2px solid black;
+}
+
+.book-image {
+  height: 400px;
+  width: auto;
+  margin: 30px auto;
+  border: 2px solid black;
+  box-shadow: 0px 0px 10px grey;
+}
+
+.book-list-section {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: fit-content;
+}
+
+button {
+  width: 100px;
+  margin: 5px auto;
+}
+
+h1, h2, h3, h4 {
+  margin: 7px;
+}

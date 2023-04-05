@@ -9,10 +9,14 @@ function BookList() {
 
   return (
     <>
-      <button onClick={() => dispatch(fetchSeussBooks())}>Get Book List</button>
-      {bookList.map((book, i) => (
-        <Book key={i} singleBook={book} />
-      ))}
+      <div className="book-list-section">
+        <button onClick={() => dispatch(fetchSeussBooks())}>
+          Get Book List
+        </button>
+        {bookList.map((book, i) => (
+          <Book key={i} singleBook={book} />
+        ))}
+      </div>
     </>
   )
 }

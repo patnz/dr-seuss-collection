@@ -42,10 +42,14 @@ function Book({ singleBook }: Props) {
   //
 
   return (
-    <div>
+    <div className="book-section">
       {isEditing ? (
         <>
-          <img alt={singleBook.title} src={singleBook.cover}></img>
+          <img
+            className="book-image"
+            alt={singleBook.title}
+            src={singleBook.cover}
+          ></img>
           <form onSubmit={handleEditSubmit}>
             <label htmlFor={'edit-title-' + singleBook.id}>Title: </label>
             <input
@@ -102,7 +106,11 @@ function Book({ singleBook }: Props) {
         </>
       ) : (
         <>
-          <img alt={singleBook.title} src={singleBook.cover}></img>
+          <img
+            className="book-image"
+            alt={singleBook.title}
+            src={singleBook.cover}
+          ></img>
           <h1>{singleBook.title}</h1>
           <h2>Published: {singleBook.year_published}</h2>
           <h3>Have you read it? {singleBook.read_status ? 'Yes' : 'No'}</h3>
