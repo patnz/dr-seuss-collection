@@ -22,7 +22,7 @@ function BookForm() {
   }
 
   return (
-    <div className="book-section">
+    <div className="add-book-section">
       <form onSubmit={handleSubmit}>
         <h1>Add Another Book</h1>
         <label htmlFor="title">Title: </label>

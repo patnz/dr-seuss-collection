@@ -20,7 +20,7 @@ html, body {
   padding: 20px;
   text-align: center;
   letter-spacing: 3px;
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Courier New', Courier, monospace;
 
 }
 .book-section {
@@ -32,6 +32,16 @@ html, body {
   width: fit-content;
   min-width: 60vw;
   border: 2px solid black;
+}
+
+.add-book-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 10px;
+  margin: 10px auto;
+  width: fit-content;
+  min-width: 60vw;
 }
 
 .book-image {
