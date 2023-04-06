@@ -50,7 +50,7 @@ function Book({ singleBook }: Props) {
             alt={singleBook.title}
             src={singleBook.cover}
           ></img>
-          <form onSubmit={handleEditSubmit}>
+          <form className="edit-book-section" onSubmit={handleEditSubmit}>
             <label htmlFor={'edit-title-' + singleBook.id}>Title: </label>
             <input
               defaultValue={singleBook.title}

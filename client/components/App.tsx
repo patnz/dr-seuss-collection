@@ -4,13 +4,11 @@ import BookForm from './BookForm'
 function App() {
   return (
     <>
-      <div className="app-container">
-        <header>
-          <h1>Dr Seuss Collection</h1>
-        </header>
-        <BookList />
-        <BookForm />
-      </div>
+      <header>
+        <h1>Dr Seuss Collection</h1>
+      </header>
+      <BookList />
+      <BookForm />
     </>
   )
 }
