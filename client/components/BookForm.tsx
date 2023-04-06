@@ -22,12 +22,11 @@ function BookForm() {
   }
 
   return (
-    <div className="add-book-section">
-      <form onSubmit={handleSubmit}>
+    <>
+      <form className="add-book-section" onSubmit={handleSubmit}>
         <h1>Add Another Book</h1>
         <label htmlFor="title">Title: </label>
         <input name="title" id="title" onChange={inputHandler} required />
-        <br></br>
         <label htmlFor="year_published">Year Published: </label>
         <input
           name="year_published"
@@ -35,12 +34,11 @@ function BookForm() {
           onChange={inputHandler}
           required
         />
-        <br></br>
         <label htmlFor="cover">Cover Image URL: </label>
         <input name="cover" id="cover" onChange={inputHandler} required />
-        <br></br>
         <label htmlFor="read_status">Have you read it? </label>
         <select
+          className="read-status-input"
           name="read_status"
           id="read_status"
           onChange={selectHandler}
@@ -51,13 +49,11 @@ function BookForm() {
             No
           </option>
         </select>
-        <br></br>
-        <br></br>
-        <button className="mini-generate-button" type="submit">
+        <button className="add-book-button" type="submit">
           ADD BOOK
         </button>
       </form>
-    </div>
+    </>
   )
 }
 

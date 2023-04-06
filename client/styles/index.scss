@@ -4,13 +4,13 @@ body {
   left: 0;
   margin: 0;
   padding: 20px;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html, body {
   margin: 0 auto;
   width: 100%;
   font-size: .9em;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .app-container {
@@ -23,15 +23,20 @@ html, body {
   font-family: 'Courier New', Courier, monospace;
 
 }
+
+header {
+  font-size: 1.5em;
+}
+
 .book-section {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   padding: 10px;
   margin: 10px auto;
-  width: fit-content;
-  min-width: 60vw;
-  border: 2px solid black;
+  min-width: 450px;
+  border: 3px red;
+  box-shadow: 0px 0px 5px black;
 }
 
 .add-book-section {
@@ -41,7 +46,9 @@ html, body {
   padding: 10px;
   margin: 10px auto;
   width: fit-content;
-  min-width: 60vw;
+  min-width: 450px;
+  border: 3px red;
+  box-shadow: 0px 0px 5px black;
 }
 
 .book-image {
@@ -63,8 +70,48 @@ html, body {
 button {
   width: 100px;
   margin: 5px auto;
+  letter-spacing: 4px;
+  font-size: 1.2em;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+
+.seuss-button, .add-book-button {
+  height: 60px;
+  width: 220px;
+  letter-spacing: 4px;
+  margin: 20px auto;
+  font-size: 1.2em;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
+}
+
+.seuss-button {
+  margin: 40px auto;
+}
+
+
+.seuss-button:hover, .add-book-button:hover {
+  opacity: 70%;
+  background-color: red;
+  color: white;
+  text-shadow: 2px 2px 2px grey;
 }
 
 h1, h2, h3, h4 {
-  margin: 7px;
+  margin: 20px auto;
+}
+
+.add-book-section input {
+  margin: 30px auto;
+  width: 260px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.read-status-input {
+  margin: 20px auto;
+  width: 120px;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
