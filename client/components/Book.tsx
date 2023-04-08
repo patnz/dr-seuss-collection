@@ -86,6 +86,7 @@ function Book({ singleBook }: Props) {
               Have you read it?{' '}
             </label>
             <select
+              className="read-status-input"
               name="read_status"
               id={'edit-read_status-' + singleBook.id}
               onChange={selectHandler}
@@ -106,11 +107,13 @@ function Book({ singleBook }: Props) {
         </>
       ) : (
         <>
-          <img
-            className="book-image"
-            alt={singleBook.title}
-            src={singleBook.cover}
-          ></img>
+          {
+            <img
+              className="book-image"
+              alt={`${singleBook.title} cover artwork`}
+              src={singleBook.cover}
+            ></img>
+          }
           <h1>{singleBook.title}</h1>
           <h2>Published: {singleBook.year_published}</h2>
           <h3>Have you read it? {singleBook.read_status ? 'Yes' : 'No'}</h3>
