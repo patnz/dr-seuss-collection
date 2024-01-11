@@ -1,10 +1,10 @@
+
+![UI Image](https://github.com/patnz/dr-seuss-collection/assets/114084721/e4dfe90b-a17c-4bca-a047-eb9afcc0a2d9)
+
 # Fullstack Collection App
 
 This repo contains a function CRUD application for a Dr Seuss book collection.
 You are welcome to repurpose the app for any other means.
-
-![UI Image](https://github.com/patnz/dr-seuss-collection/assets/114084721/e4dfe90b-a17c-4bca-a047-eb9afcc0a2d9)
-
 
 Built using:
 
