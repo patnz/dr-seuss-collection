@@ -1,33 +1,41 @@
 # Fullstack Collection App
 
-This repo is designed to provide space to code a fullstack app. It contains node modules and folders for databases, routes, api requests, react components, and redux actions and creators. Let's get going!
+This repo contains a function CRUD application for a Dr Seuss book collection.
+You are welcome to repurpose the app for any other means.
+
+![UI Image](https://github.com/patnz/dr-seuss-collection/assets/114084721/e4dfe90b-a17c-4bca-a047-eb9afcc0a2d9)
+
+
+Built using:
+
+- TypeScript
+- React (Redux)
+- Express
+- Knex
+- Postgres
+- SQLite
+
+Database functions available:
+
+- getBooks
+- addBook
+- deleteBook
+- editBook
 
 ## Setup
 
-### 0. Cloning and installation
-- [ ] Clone this repo, navigate to it, install packages, and start the server with `npm run dev`
-  <details style="padding-left: 2em">
-    <summary>Tip</summary>
+- Clone this repo, navigate to it and install packages `npm install`
+- Run `npm run knex migrate:latest` to run the latest migration (Dr Seuss book db table)
+- Run `npm run knex seed:run` to populate the table with starter data
+- Run `npm run dev` to run the development server
+- Visit `localhost:3000` and CRUD it up!
 
-    You may also want to start a new branch
-    ```sh
-    cd my-fullstack-collection-scss
-    npm i
-    git checkout -b <branchname>
-    npm run dev
-    ```
-  </details>
+For all other information about how to create your own database entries (e.g. `npm run knex migrate:make my_new_table`):
 
-<details>
-  <summary>More about using <code>npm</code> vs <code>npx</code></summary>
+https://knexjs.org/
 
-  - When running knex, run `npm run knex <command>`, e.g. `npm run knex migrate:latest` rather than using `npx`
-  - When running webpack, run `npm run webpack <extra commands>`, e.g. `npm run webpack`, rather than using `npx`
-</details>
 
----
-
-## Requirements
+## Making changes
 
 ### 1. Choosing your data set
 
@@ -86,18 +94,3 @@ Our first job is getting something showing on the front end from our database. H
 - [ ] Include the ability to add a new record (will need a form in your components)
 - [ ] Include the ability to remove/delete records
 - [ ] Include the ability to update records (e.g. for correcting typos)
-
----
-## Stretch
-
-<details>
-  <summary>More about stretch challenges</summary>
-
-  - Is there any complex data you chose to not include earlier or any way you could expand this dataset?
-    - You might have some other information (e.g. unread books vs. read books) that should be included in your database design, and this may require adjusting your database design
-  - Could you add an external API (maybe an inspirational quote in the footer?)
-  - If you haven't already, CSS!
-</details>
-
----
-[Provide feedback on this repo](https://docs.google.com/forms/d/e/1FAIpQLSfw4FGdWkLwMLlUaNQ8FtP2CTJdGDUv6Xoxrh19zIrJSkvT4Q/viewform?usp=pp_url&entry.1958421517=my-fullstack-collection-scss)
