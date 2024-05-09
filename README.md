@@ -34,7 +34,6 @@ For all other information about how to create your own database entries (e.g. `n
 
 https://knexjs.org/
 
-
 ## Making changes
 
 ### 1. Choosing your data set
